@@ -1,2 +1,9 @@
 #!/usr/bin/env node
-console.log('What a terrible world, what a beautiful world');
+
+var program = require('commander')
+
+program
+  .version('0.1.0')
+  .parse(process.argv)
+
+console.log(program.args);
