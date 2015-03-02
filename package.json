@@ -1,0 +1,27 @@
+{
+  "name": "console-error-check",
+  "version": "0.1.0",
+  "description": "A Node task. Feed it a set of webpages and it will throw an error if any of those webpages have console errors. Simple.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/jegtnes/console-error-check"
+  },
+  "keywords": [
+    "node",
+    "phantom",
+    "error",
+    "console",
+    "ci",
+    "smoketest"
+  ],
+  "author": "Alex Jegtnes",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/jegtnes/console-error-check/issues"
+  },
+  "homepage": "https://github.com/jegtnes/console-error-check"
+}
