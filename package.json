@@ -6,6 +6,9 @@
   "scripts": {
     "test": "echo \"Error: no test specified\" && exit 1"
   },
+  "bin": {
+    "console-error-check" : "./index.js"
+  },
   "repository": {
     "type": "git",
     "url": "https://github.com/jegtnes/console-error-check"
