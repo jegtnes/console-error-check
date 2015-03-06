@@ -1,6 +1,7 @@
 #!/usr/bin/env node
 
-var program = require('commander')
+var program = require('commander');
+var util = require('util');
 
 program
   .version('0.1.0')
@@ -30,28 +31,17 @@ var spooky = new Spooky({
   }
 
   spooky.start(parseURL);
-  spooky.then(function () {
-    this.emit('hello', 'Hello, from ' + this.evaluate(function () {
-      return document.title;
-    }));
-  });
-  spooky.run();
+    spooky.run();
 });
 
-spooky.on('error', function (e, stack) {
-  console.error(e);
+spooky.on('page.error', function (e, stack) {
+  console.error('Page error: ' + e);
 
   if (stack) {
-    console.log(stack);
+    console.log(util.inspect(stack, {showHidden: false, depth: null}));
   }
 });
 
-spooky.on('hello', function (greeting) {
-  console.log(greeting);
-});
-
-spooky.on('log', function (log) {
-  if (log.space === 'remote') {
-    console.log(log.message.replace(/ \- .*/, ''));
-  }
+spooky.on('remote.message', function (msg) {
+  console.log('Console message: ' + msg);
 });
