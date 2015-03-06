@@ -29,7 +29,6 @@
   "homepage": "https://github.com/jegtnes/console-error-check",
   "dependencies": {
     "commander": "^2.6.0",
-    "spooky": "^0.2.5",
-    "js-console-listener": "http://github.com/ianpgall/js-console-listener/archive/master.zip"
+    "spooky": "^0.2.5"
   }
 }
