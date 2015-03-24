@@ -1,6 +1,6 @@
 {
   "name": "console-error-check",
-  "version": "0.1.0",
+  "version": "0.2.0",
   "description": "A Node task. Feed it a set of webpages and it will throw an error if any of those webpages have console errors. Simple.",
   "main": "index.js",
   "scripts": {
