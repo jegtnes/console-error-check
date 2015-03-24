@@ -21,8 +21,7 @@ var spooky = new Spooky({
   },
   casper: {
     logLevel: 'debug',
-    verbose: true,
-    clientScripts: ['js-console-listener.js']
+    verbose: true
   }
 }, function (err) {
   if (err) {
@@ -37,10 +36,8 @@ var spooky = new Spooky({
     // for some reason there are errors emitted whenever you use the
     // ConsoleListeners. Spooky won't tell me what, so, whatevs
     try {
-
-      ConsoleListener.on(function(error, wat) {
-        console.log(error);
-        console.log(wat);
+      ConsoleListener.on(function (all) {
+        casper.log(warn);
       });
     } catch(e) {
       console.log("ffs: " + e)
@@ -55,6 +52,11 @@ spooky.on('page.error', function (e, stack) {
   if (stack) {
     console.log(util.inspect(stack, {showHidden: false, depth: null}));
   }
+});
+
+spooky.on('resource.error', function (e) {
+  console.error('Resource error: ');
+  console.log(util.inspect(e, {showHidden: false, depth: null}));
 });
 
 spooky.on('remote.message', function (msg) {
