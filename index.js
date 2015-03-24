@@ -9,11 +9,7 @@ program
 
 parseURL = program.args[0];
 
-try {
-    var Spooky = require('spooky');
-} catch (e) {
-    var Spooky = require('../lib/spooky');
-}
+var Spooky = require('spooky');
 
 var spooky = new Spooky({
   child: {
@@ -31,19 +27,7 @@ var spooky = new Spooky({
   }
 
   spooky.start(parseURL);
-
-  spooky.then(function() {
-    // for some reason there are errors emitted whenever you use the
-    // ConsoleListeners. Spooky won't tell me what, so, whatevs
-    try {
-      ConsoleListener.on(function (all) {
-        casper.log(warn);
-      });
-    } catch(e) {
-      console.log("ffs: " + e)
-    }
-  })
-    spooky.run();
+  spooky.run();
 });
 
 spooky.on('page.error', function (e, stack) {
@@ -60,5 +44,6 @@ spooky.on('resource.error', function (e) {
 });
 
 spooky.on('remote.message', function (msg) {
+  console.error('Remote message:');
   console.log(msg);
 });
