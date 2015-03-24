@@ -29,6 +29,6 @@
   "homepage": "https://github.com/jegtnes/console-error-check",
   "dependencies": {
     "commander": "^2.6.0",
-    "spooky": "^0.2.5"
+    "spooky": "git+https://git@github.com:jegtnes/SpookyJS.git#master"
   }
 }

@@ -7,7 +7,7 @@ program
   .version('0.1.0')
   .parse(process.argv)
 
-parseURL = program.args[0];
+URLs = program.args;
 
 var Spooky = require('spooky');
 
@@ -26,7 +26,12 @@ var spooky = new Spooky({
     throw e;
   }
 
-  spooky.start(parseURL);
+  spooky.start();
+  spooky.each(URLs, function(self, link) {
+      self.thenOpen(link, function() {
+      });
+  });
+
   spooky.run();
 });
 
