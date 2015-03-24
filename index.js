@@ -32,6 +32,20 @@ var spooky = new Spooky({
   }
 
   spooky.start(parseURL);
+
+  spooky.then(function() {
+    // for some reason there are errors emitted whenever you use the
+    // ConsoleListeners. Spooky won't tell me what, so, whatevs
+    try {
+
+      ConsoleListener.on(function(error, wat) {
+        console.log(error);
+        console.log(wat);
+      });
+    } catch(e) {
+      console.log("ffs: " + e)
+    }
+  })
     spooky.run();
 });
 
@@ -44,5 +58,5 @@ spooky.on('page.error', function (e, stack) {
 });
 
 spooky.on('remote.message', function (msg) {
-  console.log('Console message: ' + msg);
+  console.log(msg);
 });
