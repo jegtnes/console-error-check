@@ -21,7 +21,8 @@ var spooky = new Spooky({
   },
   casper: {
     logLevel: 'debug',
-    verbose: true
+    verbose: true,
+    clientScripts: ['js-console-listener.js']
   }
 }, function (err) {
   if (err) {
