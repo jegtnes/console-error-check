@@ -4,7 +4,7 @@ var program = require('commander');
 var util = require('util');
 
 program
-  .version('0.1.0')
+  .version('0.2.1')
   .parse(process.argv)
 
 URLs = program.args;
