@@ -5,7 +5,7 @@ var util = require('util');
 
 program
   .version('0.2.1')
-  .parse(process.argv)
+  .parse(process.argv);
 
 URLs = program.args;
 
