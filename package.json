@@ -7,7 +7,7 @@
     "test": "echo \"Error: no test specified\" && exit 1"
   },
   "bin": {
-    "console-error-check": "./index.js"
+    "console-error-check": "./bin/console-error-check.js"
   },
   "repository": {
     "type": "git",
